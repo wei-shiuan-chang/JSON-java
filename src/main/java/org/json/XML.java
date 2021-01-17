@@ -24,8 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import java.io.Reader;
-import java.io.StringReader;
+import java.io.*;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -577,6 +576,70 @@ public class XML {
     public static JSONObject toJSONObject(String string) throws JSONException {
         return toJSONObject(string, XMLParserConfiguration.ORIGINAL);
     }
+
+    public static JSONObject toJSONObject(Reader reader, JSONPointer path) throws IOException{
+
+
+        int i;
+        StringBuilder sb = new StringBuilder();
+        BufferedWriter writer = new BufferedWriter(new FileWriter("output2.json"));
+        Object ob = new Object();
+
+        while ((i = reader.read()) != -1)
+        {
+            sb.append((char)i);
+            //ob = path.queryFrom(XML.toJSONObject(sb.toString()));
+            //boolean bl = (path.queryFrom(XML.toJSONObject(sb.toString())) instanceof JSONObject || path.queryFrom(XML.toJSONObject(sb.toString())) instanceof JSONArray) ? true:false;
+
+            //System.out.println(XML.toJSONObject(sb.toString()).toString());
+            if(path.queryFrom(XML.toJSONObject(sb.toString())).toString() != null){
+                //System.out.println("isNull");
+                break;
+            }
+
+        }
+
+
+
+        if(ob != null) {
+            if (ob instanceof JSONObject)
+                writer.write(((JSONObject) ob).toString(4));
+            else if (ob instanceof JSONArray)
+                writer.write(((JSONArray) ob).toString(4));
+            else
+                writer.write(ob.toString());
+        }
+
+
+        writer.close();
+        reader.close();
+        return XML.toJSONObject(sb.toString());
+    }
+
+    public static JSONObject toJSONObject(Reader reader, JSONPointer path, JSONObject replacement) throws IOException{
+        int i;
+        StringBuilder sb = new StringBuilder();
+        BufferedWriter writer = new BufferedWriter(new FileWriter("output5.json"));
+
+        while ((i = reader.read()) != -1)
+        {
+            sb.append((char)i);
+        }
+
+        JSONObject json = XML.toJSONObject(sb.toString());
+        json.put(path.toString(),replacement);
+
+
+
+        writer.write(json.toString(4));
+        writer.close();
+        reader.close();
+
+        return json;
+
+    }
+
+
 
     /**
      * Convert a well-formed (but not necessarily valid) XML into a
