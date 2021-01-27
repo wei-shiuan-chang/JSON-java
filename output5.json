@@ -1,0 +1,198 @@
+{
+    "CD": {
+        "city": "chicago",
+        "name": "jon doe",
+        "age": "22"
+    },
+    "item": [
+        {
+            "ppu": 0.55,
+            "batters": {"batter": [
+                {
+                    "id": 1001,
+                    "content": "Regular"
+                },
+                {
+                    "id": 1002,
+                    "content": "Chocolate"
+                },
+                {
+                    "id": 1003,
+                    "content": "Blueberry"
+                },
+                {
+                    "id": 1003,
+                    "content": "Devil's Food"
+                }
+            ]},
+            "name": "Cake",
+            "id": "0001",
+            "type": "donut",
+            "topping": [
+                {
+                    "id": 5001,
+                    "content": "None"
+                },
+                {
+                    "id": 5002,
+                    "content": "Glazed"
+                },
+                {
+                    "id": 5005,
+                    "content": "Sugar"
+                },
+                {
+                    "id": 5007,
+                    "content": "Powdered Sugar"
+                },
+                {
+                    "id": 5006,
+                    "content": "Chocolate with Sprinkles"
+                },
+                {
+                    "id": 5003,
+                    "content": "Chocolate"
+                },
+                {
+                    "id": 5004,
+                    "content": "Maple"
+                }
+            ]
+        },
+        {
+            "ppu": 0.55,
+            "batters": {"batter": {
+                "id": 1001,
+                "content": "Regular"
+            }},
+            "name": "Raised",
+            "id": "0002",
+            "type": "donut",
+            "topping": [
+                {
+                    "id": 5001,
+                    "content": "None"
+                },
+                {
+                    "id": 5002,
+                    "content": "Glazed"
+                },
+                {
+                    "id": 5005,
+                    "content": "Sugar"
+                },
+                {
+                    "id": 5003,
+                    "content": "Chocolate"
+                },
+                {
+                    "id": 5004,
+                    "content": "Maple"
+                }
+            ]
+        },
+        {
+            "ppu": 0.55,
+            "batters": {"batter": [
+                {
+                    "id": 1001,
+                    "content": "Regular"
+                },
+                {
+                    "id": 1002,
+                    "content": "Chocolate"
+                }
+            ]},
+            "name": "Buttermilk",
+            "id": "0003",
+            "type": "donut"
+        },
+        {
+            "fillings": {"filling": [
+                {
+                    "name": "None",
+                    "id": 7001,
+                    "addcost": 0
+                },
+                {
+                    "name": "Custard",
+                    "id": 7002,
+                    "addcost": 0.25
+                },
+                {
+                    "name": "Whipped Cream",
+                    "id": 7003,
+                    "addcost": 0.25
+                }
+            ]},
+            "ppu": 0.75,
+            "batters": {"batter": {
+                "id": 1001,
+                "content": "Regular"
+            }},
+            "name": "Bar",
+            "id": "0004",
+            "type": "bar",
+            "topping": [
+                {
+                    "id": 5003,
+                    "content": "Chocolate"
+                },
+                {
+                    "id": 5004,
+                    "content": "Maple"
+                }
+            ]
+        }
+    ],
+    "Snack": {
+        "fillings": {"filling": [
+            {
+                "name": "Custard",
+                "id": 7002,
+                "addcost": 0
+            },
+            {
+                "name": "Whipped Cream",
+                "id": 7003,
+                "addcost": 0
+            },
+            {
+                "name": "Strawberry Jelly",
+                "id": 7004,
+                "addcost": 0
+            },
+            {
+                "name": "Rasberry Jelly",
+                "id": 7005,
+                "addcost": 0
+            }
+        ]},
+        "ppu": 0.75,
+        "batters": {"batter": {
+            "id": 1001,
+            "content": "Regular"
+        }},
+        "name": "Filled",
+        "id": "0006",
+        "type": "filled",
+        "topping": [
+            {
+                "id": 5002,
+                "content": "Glazed"
+            },
+            {
+                "id": 5007,
+                "content": "Powdered Sugar"
+            },
+            {
+                "id": 5003,
+                "content": "Chocolate"
+            },
+            {
+                "id": 5004,
+                "content": "Maple"
+            }
+        ]
+    }
+}

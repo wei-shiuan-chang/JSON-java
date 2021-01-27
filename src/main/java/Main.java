@@ -2,6 +2,7 @@ import org.junit.Test;
 import org.json.JSONObject;
 import org.json.JSONPointer;
 import org.json.XML;
+import static org.junit.Assert.*;
 
 import java.io.*;
 
@@ -19,6 +20,8 @@ public class Main {
         xml.res = new JSONObject();
         xml.count = 0;
         Object jo = xml.extractJSONObject(br, pointer);
+        //Use the result of milestone to verify
+        assertEquals(milestone1.task2(link, "/CATALOG/TestKey").toString(), jo.toString());
         System.out.println(((JSONObject) jo).toString(4));
     }
     //extract test2
@@ -34,9 +37,10 @@ public class Main {
         xml.res = new JSONObject();
         xml.count = 0;
         Object jo = xml.extractJSONObject(br, pointer);
+        //Use the result of milestone to verify
+        assertEquals(milestone1.task2(link, "/CATALOG/TestKey").toString(), jo.toString());
         System.out.println(((JSONObject) jo).toString(4));
     }
-
     //extract test3
     //extract test on nested file
     @Test
@@ -50,6 +54,8 @@ public class Main {
         xml.res = new JSONObject();
         xml.count = 0;
         JSONObject jo = xml.extractJSONObject(br, pointer);
+        //Use the result of milestone to verify
+        assertEquals(milestone1.task2(link, "/items/CD").toString(), jo.toString());
         System.out.println(jo.toString(4));
     }
     //replace test1
@@ -69,6 +75,8 @@ public class Main {
         xm.OutputCount = 0;
         JSONObject res =  xm.replaceJSONObject(br, pointer, jo);
         System.out.println(res.toString(4));
+        //Use the result of milestone to verify
+        assertEquals(milestone1.task5(link,"/CATALOG/TestKey", jo).toString(), res.toString());
         br.close();
         return;
     }
@@ -86,10 +94,11 @@ public class Main {
         jo.put("city", "chicago");
         XML xm = new XML();
         JSONObject res =  xm.replaceJSONObject(br, pointer, jo);
+        //Use the result of milestone to verify
+        assertEquals(milestone1.task5(link, "/items/CD", jo).toString(), res.toString());
         System.out.println(res.toString(4));
         br.close();
         return;
     }
-
 }
 
