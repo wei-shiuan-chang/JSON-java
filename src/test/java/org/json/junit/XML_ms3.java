@@ -38,21 +38,13 @@ public class XML_ms3 {
         Reader br = new BufferedReader(new FileReader(file.getAbsolutePath()));
         JSONObject jo = new JSONObject();
 
-        // Function<String, String> transformer = (String input) -> {
-        //     return "swe262_"+input;
-        // };
         
         Function<String, String> transformer = new Transformer1();
         
         jo = XML.toJSONObject(br,transformer);
-        Pattern p = Pattern.compile("^swe262_*$");
         for(Map.Entry<String, Object> entry: jo.toMap().entrySet()){
-            // Matcher m = p.matcher(entry.getKey());
-            // System.out.println(entry.getKey());
             assertTrue(entry.getKey().startsWith("swe262_"));
         }
-        
-        // assertEquals(task4(link), jo.toString(4));
     }
 
     public static class Transformer2 implements Function<String, String> {
