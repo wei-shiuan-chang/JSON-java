@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type='text/xsl'?>
 <CATALOG>
+    <TestKey>
+        <AUTHOR>Jimmy</AUTHOR>
+        <TITLE>Dr. Ruby</TITLE>
+        <GENER>Computer</GENER>
+        <PRICE>350</PRICE>
+        <DATE>2001-04-11</DATE>
+    </TestKey>
     <PLANT>
         <COMMON>rose</COMMON>
         <BOTANICAL>canadensis</BOTANICAL>
@@ -33,13 +40,7 @@
         <PRICE>205</PRICE>
         <AVAILABILITY>679</AVAILABILITY>
     </PLANT>
-    <TestKey>
-        <AUTHOR>Jimmy</AUTHOR>
-        <TITLE>Dr. Ruby</TITLE>
-        <GENER>Computer</GENER>
-        <PRICE>350</PRICE>
-        <DATE>2001-04-11</DATE>
-    </TestKey>
+
     <FOOD>
         <NAME>daal fry</NAME>
         <PRICE>300</PRICE>

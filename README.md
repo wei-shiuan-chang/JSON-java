@@ -1,3 +1,6 @@
+How to execute:<br>1. Open an IDE(e.g. Intellij) and build the project with gradle.<br>2. Run src/main/java/Main.java to perform testing.
+ 
+
 JSON in Java [package org.json]
 ===============================
 

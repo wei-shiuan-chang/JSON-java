@@ -30,12 +30,24 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.json.*;
-import org.junit.Assert;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+import org.json.XML;
+import org.json.XMLParserConfiguration;
+import org.json.XMLXsiTypeConverter;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
@@ -52,52 +64,6 @@ public class XMLTest {
      */
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
-
-    @Test
-    public void TestTwo() throws IOException {
-        String link = "src/main/java/xml/records.xml";
-        File file = new File(link);
-        Reader br = new BufferedReader(new FileReader(file.getAbsolutePath()));
-        JSONPointer pointer = new JSONPointer("/CATALOG/TestKey");
-        Object jo = XML.extractJSONObject(br, pointer, "TestKey");
-        System.out.println(jo.toString());
-
-        String xmlStr = "{\n" +
-                "    \"DATE\": \"2001-04-11\",\n" +
-                "    \"GENER\": \"Computer\",\n" +
-                "    \"PRICE\": 350,\n" +
-                "    \"TITLE\": \"Dr. Ruby\",\n" +
-                "    \"AUTHOR\": \"Anci C\"\n" +
-                "}";
-
-        assertEquals(xmlStr,jo);
-    }
-
-    @Test
-    public void TestFive() throws IOException {
-        String link = "src/main/java/xml/records.xml";
-        File file = new File(link);
-        Reader br = new BufferedReader(new FileReader(file.getAbsolutePath()));
-        JSONPointer pointer = new JSONPointer("/CATALOG/TestKey");
-        Object jo = XML.extractJSONObject(br, pointer, "TestKey");
-        System.out.println(jo.toString());
-
-        String xmlStr = "{\n" +
-                "    \"DATE\": \"2001-04-11\",\n" +
-                "    \"GENER\": \"Computer\",\n" +
-                "    \"PRICE\": 350,\n" +
-                "    \"TITLE\": \"Dr. Ruby\",\n" +
-                "    \"AUTHOR\": \"Anci C\"\n" +
-                "}";
-
-        assertEquals(xmlStr,jo);
-
-
-
-
-    }
-
-
 
     /**
      * JSONObject from a null XML string.

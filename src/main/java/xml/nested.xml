@@ -59,16 +59,15 @@
             </filling>
         </fillings>
     </item>
-    <item id="0005" type="twist">
-        <name>Twist</name>
-        <ppu>0.65</ppu>
-        <batters>
-            <batter id="1001">Regular</batter>
-        </batters>
-        <topping id="5002">Glazed</topping>
-        <topping id="5005">Sugar</topping>
-    </item>
-    <item id="0006" type="filled">
+    <CD>
+        <TITLE>dill diya galla</TITLE>
+        <ARTIST>Arijit singh</ARTIST>
+        <COUNTRY>India</COUNTRY>
+        <COMPANY>tseries</COMPANY>
+        <PRICE>10.90</PRICE>
+        <YEAR>2018</YEAR>
+    </CD>
+    <Snack id="0006" type="filled">
         <name>Filled</name>
         <ppu>0.75</ppu>
         <batters>
@@ -96,5 +95,5 @@
                 <addcost>0</addcost>
             </filling>
         </fillings>
-    </item>
+    </Snack>
 </items>
