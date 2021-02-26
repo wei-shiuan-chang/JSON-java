@@ -1,5 +1,7 @@
 package org.json;
 
+import sun.reflect.generics.tree.Tree;
+
 import java.io.Closeable;
 
 /*
@@ -36,16 +38,11 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.Collection;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.ResourceBundle;
-import java.util.Set;
 import java.util.regex.Pattern;
+import java.util.stream.BaseStream;
+import java.util.stream.Stream;
 
 /**
  * A JSONObject is an unordered collection of name/value pairs. Its external
@@ -101,12 +98,63 @@ import java.util.regex.Pattern;
  * @version 2016-08-15
  */
 public class JSONObject {
+
+    public Stream<JSONObject> toStream() throws Exception{
+        Stream.Builder<JSONObject> builder = Stream.builder();
+        helper(builder,this);
+        return builder.build();
+    }
+
+
+    public void helper(Stream.Builder<JSONObject> builder,JSONObject obj) throws Exception {
+
+//        System.out.println("size: "+obj.map.entrySet().size());
+//        System.out.println(obj.map.entrySet());
+
+//        Object value = obj.map.entrySet().stream().findFirst().get().getValue();
+
+
+        obj.map.entrySet().forEach(entry -> {
+            if(entry.getValue() instanceof JSONObject){
+                try {
+                    helper(builder, (JSONObject) entry.getValue());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else if(entry.getValue() instanceof JSONArray){
+                ((JSONArray) entry.getValue()).forEach(o -> {
+                    try {
+                        helper(builder,(JSONObject) o);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+
+            }else if(entry.getValue() instanceof String || entry.getValue() instanceof Integer){
+//                System.out.println("String or Integer");
+//                System.out.println("Add to Builder: key = "+entry.getKey()+", value = "+entry.getValue());
+                JSONObject o = new JSONObject();
+                o.put(entry.getKey(), String.valueOf(entry.getValue()));
+                builder.add(o);
+
+            }
+
+        });
+
+
+    }
+
+
+
+
     /**
      * JSONObject.NULL is equivalent to the value that JavaScript calls null,
      * whilst Java's null is equivalent to the value that JavaScript calls
      * undefined.
      */
     private static final class Null {
+
+        
 
         /**
          * There is only intended to be a single instance of the NULL object,
