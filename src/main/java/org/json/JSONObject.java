@@ -108,11 +108,6 @@ public class JSONObject {
 
     public void helper(Stream.Builder<JSONObject> builder,JSONObject obj) throws Exception {
 
-//        System.out.println("size: "+obj.map.entrySet().size());
-//        System.out.println(obj.map.entrySet());
-
-//        Object value = obj.map.entrySet().stream().findFirst().get().getValue();
-
 
         obj.map.entrySet().forEach(entry -> {
             if(entry.getValue() instanceof JSONObject){
@@ -131,8 +126,6 @@ public class JSONObject {
                 });
 
             }else if(entry.getValue() instanceof String || entry.getValue() instanceof Integer){
-//                System.out.println("String or Integer");
-//                System.out.println("Add to Builder: key = "+entry.getKey()+", value = "+entry.getValue());
                 JSONObject o = new JSONObject();
                 o.put(entry.getKey(), String.valueOf(entry.getValue()));
                 builder.add(o);
