@@ -1,7 +1,7 @@
 - Milestone 1
     - JSON-java/src/main/java/milestone1.java
 - Milestone 2
-    - JSON-java/src/main/java/milestone1.java
+    - JSON-java/src/main/java/milestone2.java
 - Milestone 3
     - JSON-java/src/test/java/org/json/junit/XML_ms3.java
 - Milestone 4
