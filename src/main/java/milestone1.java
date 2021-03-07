@@ -5,9 +5,9 @@ import java.util.*;
 public class milestone1 {
     public static void main(String[] args) throws IOException {
         String link = "xml/records.xml";
-        //task2(link, "/CATALOG/PLANT");
-        //task3(link, "/CATALOG/PLANT");
-        //task4(link);
+        task2(link, "/CATALOG/PLANT");
+        task3(link, "/CATALOG/PLANT");
+        task4(link);
         JSONObject jo = new JSONObject();
         jo.put("name", "jon doe");
         jo.put("age", "22");
@@ -98,7 +98,7 @@ public class milestone1 {
 
     private static void helper(Object o){
         if(o instanceof JSONObject){
-            Map<String, Object> map = new HashMap<>(((JSONObject) o).toMap());
+            Map<String, Object> map = new HashMap<String, Object>(((JSONObject) o).toMap());
             for(Map.Entry<String, Object> entry: map.entrySet()){
                 String ori = entry.getKey();
                 String newKey = "swe262_" + ori;

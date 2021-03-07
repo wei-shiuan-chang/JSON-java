@@ -1,4 +1,4 @@
-import org.junit.Test;
+import org.testng.annotations.Test;
 import org.json.JSONObject;
 import org.json.JSONPointer;
 import org.json.XML;
@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 import java.io.*;
 
-public class Main {
+public class milestone2 {
     //extract test1
     //extract test on regular xml
     @Test
