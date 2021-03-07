@@ -1,9 +1,11 @@
-How to execute:<br>1. Open an IDE(e.g. Intellij) and build the project with gradle.<br>2. Run src/main/java/Main.java to perform testing.
- 
+- Milestone 1
+    - JSON-java/src/main/java/milestone1.java
+- Milestone 2
+    - JSON-java/src/main/java/milestone1.java
 - Milestone 3
-    - src/test/java/org/json/junit/XML_ms3.java
+    - JSON-java/src/test/java/org/json/junit/XML_ms3.java
 - Milestone 4
-    - src/test/java/org/json/junit/XML_ms4.java
+    - JSON-java/src/test/java/org/json/junit/XML_ms4.java
 
 
 JSON in Java [package org.json]
