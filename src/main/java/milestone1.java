@@ -4,15 +4,16 @@ import java.util.*;
 
 public class milestone1 {
     public static void main(String[] args) throws IOException {
-        String link = "xml/records.xml";
-        task2(link, "/CATALOG/PLANT");
-        task3(link, "/CATALOG/PLANT");
-        task4(link);
+        String link = "src/main/java/xml/records.xml";
+        task1(link);
+        //task2(link, "/CATALOG/PLANT");
+        //task3(link, "/CATALOG/PLANT");
+        //task4(link);
         JSONObject jo = new JSONObject();
         jo.put("name", "jon doe");
         jo.put("age", "22");
         jo.put("city", "chicago");
-        task5(link,"/CATALOG/TestKey", jo);
+        //task5(link,"/CATALOG/TestKey", jo);
     }
 
     private static void task1(String path) throws JSONException, IOException{

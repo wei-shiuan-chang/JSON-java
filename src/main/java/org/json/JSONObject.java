@@ -1,7 +1,4 @@
 package org.json;
-
-import sun.reflect.generics.tree.Tree;
-
 import java.io.Closeable;
 
 /*
@@ -1667,9 +1664,6 @@ public class JSONObject {
      * Searches the class hierarchy to see if the method or it's super
      * implementations and interfaces has the annotation. Returns the depth of the
      * annotation in the hierarchy.
-     *
-     * @param <A>
-     *            type of the annotation
      *
      * @param m
      *            method to check
