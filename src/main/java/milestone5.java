@@ -66,7 +66,7 @@ public class milestone5 {
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (TimeoutException e) {
-            System.out.println("Conversion is not finished within 100 seconds");
+            System.out.println("Conversion is not finished within 100 milliseconds");
         }
         //execute fun when the JSONObject becomes available
         if(jo != null){
