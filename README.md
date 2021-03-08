@@ -6,6 +6,8 @@
     - JSON-java/src/test/java/org/json/junit/XML_ms3.java
 - Milestone 4
     - JSON-java/src/test/java/org/json/junit/XML_ms4.java
+- Milestone 5
+    - JSON-java/src/main/java/milestone5.java
 
 
 JSON in Java [package org.json]
